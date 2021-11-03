@@ -1,31 +1,32 @@
-
-
 public class employeeattendance{
+	public static final int IsParttime = 1;
+	public static final	int IsFulltime = 2;
 	public static void main(String[] args){
-		int Is_Parttime = 1;
-		int Is_Fulltime = 2;
-		int Emp_wage_per_hour = 20;
-			int Emp_hour = 0;
-			int dailywage = 0;
-			double empcheck = Math.floor(Math.random()*3);
-			if(Is_Parttime == empcheck){
-		 	Emp_hour = 4;
-			dailywage=(Emp_hour*Emp_wage_per_hour);
-			System.out.println("Employee is part time and daily wage is" +dailywage);
+	
+	int Emp_wage_per_hour = 20;
+	int Emp_hour = 0;
+	int dailywage = 0;
+	
+	int empcheck = (int) Math.floor((Math.random()*10)%3);
+	
+	switch (empcheck){
 
-			}
+	case IsParttime:
+	Emp_hour = 4;
+	dailywage=(Emp_hour*Emp_wage_per_hour);
+	System.out.println("Employee is part time and daily wage is  "+dailywage);
+	break;
 
-			else if(empcheck == Is_Fulltime){
-			Emp_hour = 8;
-			dailywage=(Emp_hour*Emp_wage_per_hour);
-			System.out.println("employee is full time and daily wage is  " +dailywage);
-			
-			
-			}else{
-			Emp_hour = 0;
-			dailywage=(Emp_hour*Emp_wage_per_hour); 
-			System.out.println("Employee is absent and daily wage is " +dailywage);	
-			}
-			
-		}
-		} 
+	case IsFulltime:
+	Emp_hour = 8;
+	dailywage=(Emp_hour*Emp_wage_per_hour);
+	System.out.println("Employee is full time and daily wage is " +dailywage);
+	break;
+
+	default:
+	Emp_hour = 0;
+	System.out.println("Employee is absent and daily wage is  " +dailywage);
+	}
+   }
+}
+
